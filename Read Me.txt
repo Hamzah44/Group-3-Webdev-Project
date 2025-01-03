@@ -1,0 +1,11 @@
+You need to import database to PHP MyAdmin
+Database named "travel_db"
+you can find the SQL file in folder call Database
+
+and open link 
+ http://localhost/Travel/Travel/home.php
+
+if you to do booking you need to logi if u have
+existing account or register new account 
+
+Thank you and warm Greetings from group 14 to Dr. Mohd Zanes Bin Sahid
