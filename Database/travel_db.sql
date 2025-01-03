@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 04:07 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Generation Time: Jan 03, 2025 at 04:51 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book_form` (
   `id` int(11) NOT NULL,
-`user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` int(10) NOT NULL,
@@ -38,12 +38,17 @@ CREATE TABLE `book_form` (
   `guests` int(3) NOT NULL,
   `arrivals` date NOT NULL,
   `leaving` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `book_form`
 --
 
+INSERT INTO `book_form` (`id`, `user_id`, `name`, `email`, `phone`, `address`, `location`, `guests`, `arrivals`, `leaving`) VALUES
+(1, 0, 'HAMZAH NAJIB', 'hamzanajibo44@gmail.com', 1163944323, 'batu pahat', 'penang', 3, '2025-01-30', '2025-01-14'),
+(2, 0, 'abubakar', 'abubakar123@gmail.com', 1137975367, 'Nigeria ', 'Langkawi', 2, '2025-01-23', '2025-01-31'),
+(3, 0, 'Ahmed Esmail', 'AhmedEsmail11@gmail.com', 179443526, 'yemen', 'Penang ', 4, '2025-10-15', '2025-10-23'),
+(4, 0, 'Abubakar', 'Sadiq123@gmail.com', 1137975367, 'Nigeria', 'Melaka', 6, '2025-01-15', '2025-01-30');
 
 -- --------------------------------------------------------
 
@@ -56,13 +61,19 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
+(1, 'hamzah', 'hamzanajibo44@gmail.com', '81a76a8ed7a973b4d954aabf7d7f1a7c'),
+(2, 'Hamzah', 'hamzanajibo77@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(3, 'manga', 'mangasadeeq@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
+(4, 'admin', 'admin@com', '202cb962ac59075b964b07152d234b70'),
+(5, 'Ahmed', 'AhmedEsmail11@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(6, 'Sadiq', 'Sadiq123@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -85,16 +96,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-COMMIT;
---
 -- AUTO_INCREMENT for table `book_form`
 --
 ALTER TABLE `book_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
